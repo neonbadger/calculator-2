@@ -23,8 +23,12 @@ while True:
         if len(token) > 3:
             print "we will perform operation on the first 2 numbers from your input."
         
-        num1 = float(token[1])
-        num2 = float(token[2])
+        try:
+            num1 = float(token[1])
+            num2 = float(token[2])
+        except ValueError:
+            print "Please put in valid numbers to perform calculations."
+            continue
 
         if token[0] == "+":
             print add(num1, num2)
